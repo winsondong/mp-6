@@ -77,11 +77,30 @@ const Provider = styled.p`
   color: #666;
 `;
 
+const SignOutButton = styled.button`
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #7c3aed;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  align-self: start;
+
+  &:hover {
+    opacity: 0.9;
+  }
+`;
+
 interface UserProfileProps {
   user: UserProfileData;
 }
 
 export default function UserProfile({ user }: UserProfileProps) {
+    const handleSignOut = () => {
+        window.location.href = "/";
+      };
   return (
     <ProfileWrapper>
       <UserCard>
@@ -92,6 +111,7 @@ export default function UserProfile({ user }: UserProfileProps) {
             <UserName>{user.name}</UserName>
             <UserEmail>{user.email}</UserEmail>
             <Provider>Signed in with: Google</Provider>
+            <SignOutButton onClick={handleSignOut}>Sign out</SignOutButton>
           </InfoText>
         </CardBody>
       </UserCard>
