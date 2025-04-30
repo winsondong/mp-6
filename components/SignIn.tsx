@@ -3,7 +3,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-const Container = styled.div`
+const SignInContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@ const Container = styled.div`
   padding: 2rem;
 `;
 
-const Card = styled.div`
+const SignInCard = styled.div`
   background: #fff;
   border-radius: 1rem;
   padding: 3rem;
@@ -24,13 +24,13 @@ const Card = styled.div`
   margin-top: 4rem;
 `;
 
-const Title = styled.h1`
+const SignInTitle = styled.h1`
   margin: 0 0 1rem;
   font-size: 2rem;
   color: #333;
 `;
 
-const Subtitle = styled.p`
+const SignInSubtitle = styled.p`
   margin: 0 0 2rem;
   font-size: 1.125rem;
   color: #555;
@@ -51,12 +51,12 @@ const SignInButton = styled(Link)`
 
 export default function SignIn() {
   return (
-    <Container>
-      <Card>
-        <Title>OAuth Demo</Title>
-        <Subtitle>Click the link below to sign in!</Subtitle>
+    <SignInContainer>
+      <SignInCard>
+        <SignInTitle>OAuth Demo</SignInTitle>
+        <SignInSubtitle>Click the link below to sign in!</SignInSubtitle>
         <SignInButton href="/api/auth/google">Sign in with Google</SignInButton>
-      </Card>
-    </Container>
+      </SignInCard>
+    </SignInContainer>
   );
 }

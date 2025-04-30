@@ -8,12 +8,13 @@ export interface UserProfileData {
   picture: string;
 }
 
-const ProfileWrapper = styled.main`
-  background: #f3e8ff;
+const ProfileWrapper = styled.div`
+  flex: 1;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  justify-content: center;
+  width: 100%;
   padding: 2rem;
   
 `;
@@ -21,12 +22,12 @@ const ProfileWrapper = styled.main`
 const UserCard = styled.div`
   background: #fff;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 3rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   max-width: 480px;
-  width: 100%;
-  margin-top: -20rem;
-  
+  width: 90%;
+  margin-top: 4rem;
+
 `;
 
 const CardTitle = styled.h2`
@@ -98,9 +99,11 @@ interface UserProfileProps {
 }
 
 export default function UserProfile({ user }: UserProfileProps) {
+
     const handleSignOut = () => {
         window.location.href = "/";
       };
+
   return (
     <ProfileWrapper>
       <UserCard>
